@@ -1,0 +1,620 @@
+/**
+ * RGB Rock Light Theme - Additional Styles
+ *
+ * These styles complement the main style.css and can be safely overridden by Elementor.
+ *
+ * @package RGB_Rock_Light
+ */
+
+/* ==========================================================================
+   Header Actions
+   ========================================================================== */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-4);
+}
+
+.header-cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 44px;
+    height: 44px;
+    color: var(--color-white);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.header-cart:hover {
+    color: var(--color-purple-400);
+}
+
+.header-cart svg {
+    width: 24px;
+    height: 24px;
+}
+
+.cart-count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--color-white);
+    background: linear-gradient(to right, var(--color-purple-600), var(--color-pink-600));
+    border-radius: var(--radius-full);
+}
+
+/* ==========================================================================
+   Post Cards Grid
+   ========================================================================== */
+.posts-grid {
+    display: grid;
+    gap: var(--spacing-8);
+    margin-bottom: var(--spacing-8);
+}
+
+@media (min-width: 640px) {
+    .posts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .posts-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.post-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    transition: transform var(--transition-normal), border-color var(--transition-normal);
+}
+
+.post-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(168, 85, 247, 0.4);
+}
+
+.post-card .post-thumbnail {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+.post-card .post-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-normal);
+}
+
+.post-card:hover .post-thumbnail img {
+    transform: scale(1.05);
+}
+
+.post-card .post-content {
+    padding: var(--spacing-6);
+}
+
+.post-card .entry-title {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-2);
+}
+
+.post-card .entry-title a {
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+.post-card .entry-title a:hover {
+    color: var(--color-purple-400);
+}
+
+.post-card .entry-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-3);
+    font-size: 0.875rem;
+    color: var(--color-gray-500);
+    margin-bottom: var(--spacing-3);
+}
+
+.post-card .entry-summary {
+    color: var(--color-gray-400);
+    margin-bottom: var(--spacing-4);
+}
+
+.post-card .read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    color: var(--color-purple-400);
+    font-weight: 500;
+    transition: gap var(--transition-fast);
+}
+
+.post-card .read-more:hover {
+    gap: var(--spacing-3);
+}
+
+/* ==========================================================================
+   Single Post Styles
+   ========================================================================== */
+.single-post {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.single-post .entry-header {
+    margin-bottom: var(--spacing-8);
+    text-align: center;
+}
+
+.single-post .entry-title {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-4);
+}
+
+@media (min-width: 768px) {
+    .single-post .entry-title {
+        font-size: 3rem;
+    }
+}
+
+.single-post .entry-meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-4);
+    font-size: 0.875rem;
+    color: var(--color-gray-500);
+}
+
+.single-post .entry-meta a {
+    color: var(--color-gray-400);
+}
+
+.single-post .entry-meta a:hover {
+    color: var(--color-purple-400);
+}
+
+.single-post .post-thumbnail {
+    margin-bottom: var(--spacing-8);
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+}
+
+.single-post .entry-content {
+    font-size: 1.125rem;
+    line-height: 1.8;
+}
+
+.single-post .entry-footer {
+    margin-top: var(--spacing-8);
+    padding-top: var(--spacing-8);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.single-post .entry-tags {
+    color: var(--color-gray-500);
+}
+
+.single-post .entry-tags a {
+    color: var(--color-purple-400);
+}
+
+/* ==========================================================================
+   Post Navigation
+   ========================================================================== */
+.post-navigation {
+    margin-top: var(--spacing-12);
+    padding-top: var(--spacing-8);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.post-navigation .nav-links {
+    display: grid;
+    gap: var(--spacing-4);
+}
+
+@media (min-width: 640px) {
+    .post-navigation .nav-links {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.post-navigation a {
+    display: block;
+    padding: var(--spacing-4);
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    transition: border-color var(--transition-fast);
+}
+
+.post-navigation a:hover {
+    border-color: var(--color-purple-500);
+}
+
+.post-navigation .nav-subtitle {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--color-gray-500);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--spacing-1);
+}
+
+.post-navigation .nav-title {
+    color: var(--color-white);
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   Pagination
+   ========================================================================== */
+.pagination,
+.woocommerce-pagination {
+    margin-top: var(--spacing-8);
+}
+
+.pagination .nav-links,
+.woocommerce-pagination ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-2);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.pagination .page-numbers,
+.woocommerce-pagination a,
+.woocommerce-pagination span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    height: 44px;
+    padding: 0 var(--spacing-4);
+    color: var(--color-gray-400);
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+}
+
+.pagination .page-numbers:hover,
+.woocommerce-pagination a:hover {
+    color: var(--color-white);
+    border-color: var(--color-purple-500);
+}
+
+.pagination .page-numbers.current,
+.woocommerce-pagination span.current {
+    color: var(--color-white);
+    background: linear-gradient(to right, var(--color-purple-600), var(--color-pink-600));
+    border-color: transparent;
+}
+
+/* ==========================================================================
+   Page Header
+   ========================================================================== */
+.page-header {
+    margin-bottom: var(--spacing-12);
+    text-align: center;
+}
+
+.page-header .page-title {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-4);
+}
+
+@media (min-width: 768px) {
+    .page-header .page-title {
+        font-size: 3rem;
+    }
+}
+
+/* ==========================================================================
+   Search Form
+   ========================================================================== */
+.search-form {
+    display: flex;
+    gap: var(--spacing-2);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.search-form .search-field {
+    flex: 1;
+}
+
+.search-form .search-submit {
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Comments
+   ========================================================================== */
+.comments-area {
+    margin-top: var(--spacing-12);
+    padding-top: var(--spacing-8);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.comments-title {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-6);
+}
+
+.comment-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.comment {
+    margin-bottom: var(--spacing-6);
+    padding: var(--spacing-6);
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-lg);
+}
+
+.comment .children {
+    list-style: none;
+    margin-top: var(--spacing-6);
+    padding-left: var(--spacing-6);
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.comment-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    margin-bottom: var(--spacing-3);
+}
+
+.comment-author .avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-full);
+}
+
+.comment-author .fn {
+    font-weight: 600;
+    color: var(--color-white);
+}
+
+.comment-metadata {
+    font-size: 0.875rem;
+    color: var(--color-gray-500);
+}
+
+.comment-metadata a {
+    color: var(--color-gray-500);
+}
+
+.comment-content {
+    color: var(--color-gray-300);
+}
+
+.comment-reply-link {
+    font-size: 0.875rem;
+    color: var(--color-purple-400);
+}
+
+/* Comment Form */
+.comment-respond {
+    margin-top: var(--spacing-8);
+}
+
+.comment-form {
+    display: grid;
+    gap: var(--spacing-4);
+}
+
+.comment-form-comment {
+    grid-column: 1 / -1;
+}
+
+@media (min-width: 640px) {
+    .comment-form {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.comment-form label {
+    display: block;
+    margin-bottom: var(--spacing-2);
+    font-weight: 500;
+}
+
+.comment-form input[type="text"],
+.comment-form input[type="email"],
+.comment-form input[type="url"],
+.comment-form textarea {
+    width: 100%;
+}
+
+.form-submit {
+    grid-column: 1 / -1;
+}
+
+/* ==========================================================================
+   Footer Navigation
+   ========================================================================== */
+.footer-navigation {
+    margin-bottom: var(--spacing-8);
+}
+
+.footer-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-6);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-menu a {
+    color: var(--color-gray-400);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.footer-menu a:hover {
+    color: var(--color-white);
+}
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* ==========================================================================
+   Utility Classes
+   ========================================================================== */
+.text-center {
+    text-align: center;
+}
+
+.text-gradient {
+    background: linear-gradient(to right, var(--color-purple-400), var(--color-pink-500), var(--color-cyan-400));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.bg-gradient-primary {
+    background: linear-gradient(to right, var(--color-purple-600), var(--color-pink-600));
+}
+
+.glass-effect {
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ==========================================================================
+   Widget Styles
+   ========================================================================== */
+.widget {
+    margin-bottom: var(--spacing-8);
+}
+
+.widget-title {
+    font-size: 1.125rem;
+    margin-bottom: var(--spacing-4);
+    padding-bottom: var(--spacing-3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.widget ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.widget li {
+    padding: var(--spacing-2) 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.widget li:last-child {
+    border-bottom: none;
+}
+
+.widget a {
+    color: var(--color-gray-400);
+}
+
+.widget a:hover {
+    color: var(--color-purple-400);
+}
+
+/* ==========================================================================
+   404 Page
+   ========================================================================== */
+.error-404 {
+    text-align: center;
+    padding: var(--spacing-20) 0;
+}
+
+.error-404 .page-title {
+    font-size: 6rem;
+    margin-bottom: var(--spacing-4);
+    background: linear-gradient(to right, var(--color-purple-400), var(--color-pink-500));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.error-404 .page-content {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   Header States (JavaScript controlled)
+   ========================================================================== */
+.site-header.is-scrolled {
+    background-color: rgba(0, 0, 0, 0.95);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+}
+
+.site-header.is-hidden {
+    transform: translateY(-100%);
+}
+
+/* ==========================================================================
+   Menu Toggle Active State
+   ========================================================================== */
+.menu-toggle.is-active span {
+    background-color: transparent;
+}
+
+.menu-toggle.is-active span::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.menu-toggle.is-active span::after {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+/* ==========================================================================
+   Mobile Menu Open State
+   ========================================================================== */
+body.mobile-menu-open {
+    overflow: hidden;
+}

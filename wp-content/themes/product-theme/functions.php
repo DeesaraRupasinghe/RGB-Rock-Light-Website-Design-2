@@ -377,10 +377,26 @@ add_filter( 'nav_menu_css_class', 'rgb_rock_light_menu_classes', 10, 2 );
  * Add schema markup to site logo
  */
 function rgb_rock_light_get_custom_logo( $html ) {
-    $html = str_replace( 'custom-logo-link', 'custom-logo-link', $html );
+    // Add itemscope and itemtype for Organization schema
+    $html = str_replace( 'custom-logo-link', 'custom-logo-link" itemprop="url', $html );
+    $html = str_replace( '<a ', '<a itemscope itemtype="https://schema.org/Organization" ', $html );
     return $html;
 }
 add_filter( 'get_custom_logo', 'rgb_rock_light_get_custom_logo' );
+
+/**
+ * Mobile menu fallback function
+ * Falls back to primary menu if no mobile menu is set
+ */
+function rgb_rock_light_mobile_menu_fallback() {
+    wp_nav_menu( array(
+        'theme_location' => 'primary',
+        'menu_id'        => 'mobile-menu',
+        'menu_class'     => 'mobile-menu',
+        'container'      => false,
+        'fallback_cb'    => false,
+    ) );
+}
 
 /**
  * ============================================================================

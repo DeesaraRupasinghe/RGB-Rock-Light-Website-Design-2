@@ -582,3 +582,39 @@
     max-width: 500px;
     margin: 0 auto;
 }
+
+/* ==========================================================================
+   Header States (JavaScript controlled)
+   ========================================================================== */
+.site-header.is-scrolled {
+    background-color: rgba(0, 0, 0, 0.95);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+}
+
+.site-header.is-hidden {
+    transform: translateY(-100%);
+}
+
+/* ==========================================================================
+   Menu Toggle Active State
+   ========================================================================== */
+.menu-toggle.is-active span {
+    background-color: transparent;
+}
+
+.menu-toggle.is-active span::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.menu-toggle.is-active span::after {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+/* ==========================================================================
+   Mobile Menu Open State
+   ========================================================================== */
+body.mobile-menu-open {
+    overflow: hidden;
+}

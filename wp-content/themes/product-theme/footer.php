@@ -66,7 +66,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                     echo wp_kses_post( $footer_text );
                 else :
                     ?>
-                    <p>&copy; <?php echo esc_html( date_i18n( 'Y' ) ); ?> <?php bloginfo( 'name' ); ?>. <?php esc_html_e( 'All rights reserved.', 'rgb-rock-light' ); ?></p>
+                    <p>&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php bloginfo( 'name' ); ?>. <?php esc_html_e( 'All rights reserved.', 'rgb-rock-light' ); ?></p>
                 <?php endif; ?>
             </div><!-- .site-info -->
         </div><!-- .container -->

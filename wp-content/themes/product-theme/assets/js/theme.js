@@ -158,38 +158,4 @@
         });
     }
 
-    /**
-     * Add CSS class for styling scrolled state
-     */
-    var style = document.createElement('style');
-    style.textContent = [
-        '.site-header.is-scrolled {',
-        '    background-color: rgba(0, 0, 0, 0.95);',
-        '    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);',
-        '}',
-        '',
-        '.site-header.is-hidden {',
-        '    transform: translateY(-100%);',
-        '}',
-        '',
-        '.menu-toggle.is-active span {',
-        '    background-color: transparent;',
-        '}',
-        '',
-        '.menu-toggle.is-active span::before {',
-        '    transform: rotate(45deg);',
-        '    top: 0;',
-        '}',
-        '',
-        '.menu-toggle.is-active span::after {',
-        '    transform: rotate(-45deg);',
-        '    top: 0;',
-        '}',
-        '',
-        'body.mobile-menu-open {',
-        '    overflow: hidden;',
-        '}'
-    ].join('\n');
-    document.head.appendChild(style);
-
 })();

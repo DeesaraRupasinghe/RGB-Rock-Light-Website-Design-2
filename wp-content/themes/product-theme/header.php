@@ -91,16 +91,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         'menu_id'        => 'mobile-menu',
         'menu_class'     => 'mobile-menu',
         'container'      => false,
-        'fallback_cb'    => function() {
-            // Fallback to primary menu if no mobile menu is set
-            wp_nav_menu( array(
-                'theme_location' => 'primary',
-                'menu_id'        => 'mobile-menu',
-                'menu_class'     => 'mobile-menu',
-                'container'      => false,
-                'fallback_cb'    => false,
-            ) );
-        },
+        'fallback_cb'    => 'rgb_rock_light_mobile_menu_fallback',
     ) );
     ?>
 </nav><!-- #mobile-navigation -->

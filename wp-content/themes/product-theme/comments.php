@@ -99,12 +99,7 @@ function rgb_rock_light_comment_callback( $comment, $args, $depth ) {
                         echo get_avatar( $comment, $args['avatar_size'] );
                     }
                     ?>
-                    <?php
-                    printf(
-                        '<b class="fn">%s</b>',
-                        get_comment_author_link()
-                    );
-                    ?>
+                    <b class="fn"><?php comment_author_link(); ?></b>
                 </div><!-- .comment-author -->
 
                 <div class="comment-metadata">
